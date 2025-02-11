@@ -1,0 +1,116 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background: #f8f9fa;
+    color: #333;
+}
+
+/* Hero Section with Parallax */
+.hero-section {
+    background: url('https://images.unsplash.com/photo-1605470207062-b72b5cbe2a87?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover fixed no-repeat;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ffcc00;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: white;
+    position: relative;
+    z-index: 2;
+}
+
+/* History Section */
+.history-section {
+    background: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* Culture Section */
+.culture-section {
+    background: #004080;
+    padding: 60px 20px;
+    text-align: center;
+    color: white;
+}
+
+.value-card {
+    background: #ffcc00;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: #004080;
+    transition: transform 0.3s;
+}
+
+.value-card:hover {
+    transform: translateY(-10px);
+}
+
+.value-card h4 {
+    font-size: 1.5rem;
+}
+
+/* Parallax Sections */
+.parallax-section {
+    height: 60vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.old-campus {
+    background-image: url('https://images.unsplash.com/photo-1605470207062-b72b5cbe2a87?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+}
+
+.new-campus {
+    background-image: url('https://images.unsplash.com/photo-1591123120675-6f7f1aae0e5b?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+}
+
+/* Achievements Section */
+.achievements-section {
+    background: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.achievements-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #004080;
+}
+
+.achievements-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.achievements-section li {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}

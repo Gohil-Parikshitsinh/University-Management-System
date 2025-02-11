@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - University</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="Home.css">
+    <link rel="stylesheet" href="ContactUs.css">
+    <script src="Home.js"></script>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg custom-navbar">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="https://ljku.edu.in/web/image/res.company/1/logo" alt="University Logo" height="40" class="me-2">
+                <span class="fw-bold">My University</span>
+            </a>
+
+            <!-- Toggle Button for Mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="AboutUs.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Admissions</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="ContactUs.html">Contact</a></li>
+                </ul>
+                <!-- Login Button -->
+                <a href="#" class="btn login-btn ms-3">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="container text-center">
+            <h1 class="hero-title">Get in Touch with Us</h1>
+            <p class="hero-subtitle">We're here to help. Reach out to us anytime!</p>
+        </div>
+    </section>
+
+    <!-- Section 1: Address -->
+<section class="contact-section">
+    <div class="content">
+        <h2>Visit Our Campus</h2>
+        <p>We welcome you to visit our university campus, take a tour, and experience our vibrant community. Our campus is open for visitors from Monday to Saturday.</p>
+        <p><strong>Address:</strong> 123 University Road, City, Country</p>
+    </div>
+    <div class="image-container">
+        <img src="https://images.unsplash.com/photo-1527891751199-7225231a68dd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Campus Image">
+    </div>
+</section>
+
+<!-- Section 2: Phone & Email -->
+<section class="contact-section alternate">
+    <div class="image-container">
+        <img src="https://images.unsplash.com/photo-1580537782437-8d6a0ca13de6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Call Center">
+    </div>
+    <div class="content">
+        <h2>Call or Email Us</h2>
+        <p>Have questions? Our team is available to assist you with admissions, programs, and more.</p>
+        <p><strong>Phone:</strong> +123 456 7890</p>
+        <p><strong>Email:</strong> contact@university.com</p>
+    </div>
+</section>
+
+<!-- Section 3: Office Hours -->
+<section class="contact-section">
+    <div class="content">
+        <h2>Office Hours</h2>
+        <p>Our team is available during the following hours to assist you.</p>
+        <p><strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM</p>
+        <p><strong>Saturday:</strong> 10:00 AM - 3:00 PM</p>
+        <p><strong>Sunday:</strong> Closed</p>
+    </div>
+    <div class="image-container">
+        <img src="https://images.unsplash.com/photo-1561089489-f13d5e730d72?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Office Hours">
+    </div>
+</section>
+
+<!-- Section 4: Contact Form -->
+<section class="contact-section alternate">
+    <div class="image-container">
+        <img src="https://plus.unsplash.com/premium_photo-1680807869288-c3c604ee446c?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Contact Form">
+    </div>
+    <div class="content">
+        <h2>Send Us a Message</h2>
+        <p>Fill out the form below and our team will get back to you as soon as possible.</p>
+        <form>
+            <div class="mb-3">
+                <label for="name" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-warning">Send Message</button>
+        </form>
+    </div>
+</section>
+
+<!-- Footer Section -->
+<footer class="footer-section">
+    <div class="container">
+        <div class="row">
+            <!-- About Section -->
+            <div class="col-lg-3 col-md-6">
+                <h4>About University</h4>
+                <p>Providing quality education for over 50 years, our university is a place for learning, innovation, and excellence.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-lg-3 col-md-6">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Courses</a></li>
+                    <li><a href="#">Admissions</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Academics -->
+            <div class="col-lg-3 col-md-6">
+                <h4>Academics</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Undergraduate</a></li>
+                    <li><a href="#">Postgraduate</a></li>
+                    <li><a href="#">Research</a></li>
+                    <li><a href="#">Faculty</a></li>
+                    <li><a href="#">Library</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="col-lg-3 col-md-6">
+                <h4>Contact Us</h4>
+                <ul class="contact-info">
+                    <li><i class="fas fa-map-marker-alt"></i> 123 University Road, City, Country</li>
+                    <li><i class="fas fa-phone"></i> +123 456 7890</li>
+                    <li><i class="fas fa-envelope"></i> info@university.com</li>
+                </ul>
+            </div>
+        </div>
+
+        <hr>
+        <!-- Copyright -->
+        <div class="text-center">
+            <p>&copy; 2025 University Name. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

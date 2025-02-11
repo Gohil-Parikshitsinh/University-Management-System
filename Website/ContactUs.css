@@ -1,0 +1,132 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background: #f8f9fa;
+    color: #333;
+}
+
+/* Hero Section */
+.hero-section {
+    background: url('https://images.unsplash.com/photo-1605364850032-e25ae0835552?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover fixed no-repeat;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ffcc00;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: white;
+    position: relative;
+    z-index: 2;
+}
+
+/* Contact Sections */
+.contact-section {
+    display: flex;
+    align-items: center;
+    min-height: 500px; /* Ensures consistent height */
+    padding: 0;
+    background: white;
+}
+
+.contact-section.alternate {
+    background: #004080;
+    color: white;
+}
+
+/* Image Side */
+.contact-section .image-container {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.contact-section .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image covers the full section */
+}
+
+/* Content Side */
+.contact-section .content {
+    width: 50%;
+    padding: 60px;
+}
+
+.contact-section h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #004080;
+}
+
+.contact-section.alternate h2 {
+    color: #ffcc00;
+}
+
+.contact-section p {
+    font-size: 1.2rem;
+}
+
+/* Form Styling */
+.form-control {
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.form-control:focus {
+    border-color: #ffcc00;
+    box-shadow: 0 0 5px rgba(255, 204, 0, 0.7);
+}
+
+.btn-warning {
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.btn-warning:hover {
+    background: #e6b800;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-section {
+        flex-direction: column;
+    }
+    
+    .contact-section .image-container,
+    .contact-section .content {
+        width: 100%;
+        height: auto;
+    }
+
+    .contact-section .content {
+        padding: 40px;
+        text-align: center;
+    }
+}
