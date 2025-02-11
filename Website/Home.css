@@ -1,0 +1,430 @@
+/* Custom Navbar Styling */
+.custom-navbar {
+    background: linear-gradient(90deg, #004080, #00264d); /* Stylish gradient background */
+    padding: 15px 0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.custom-navbar .navbar-brand {
+    color: white;
+    font-size: 22px;
+}
+
+.custom-navbar .navbar-brand img {
+    border-radius: 5px; /* Rounded logo */
+}
+
+.custom-navbar .navbar-nav .nav-link {
+    color: white;
+    font-size: 16px;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Underline effect on hover */
+.custom-navbar .navbar-nav .nav-link::after {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 0;
+    background-color: #ffcc00;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s;
+}
+
+.custom-navbar .navbar-nav .nav-link:hover::after,
+.custom-navbar .navbar-nav .nav-link.active::after {
+    width: 70%;
+}
+
+.custom-navbar .navbar-nav .nav-link:hover {
+    color: #ffcc00;
+}
+
+/* Login Button */
+.login-btn {
+    background-color: #ffcc00;
+    color: #004080;
+    padding: 8px 15px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.login-btn:hover {
+    background-color: #e6b800;
+    transform: scale(1.05);
+}
+
+
+/* Hero Section Styles */
+.hero-section {
+    position: relative;
+    height: 90vh; /* Full screen height */
+    background: url('https://images.unsplash.com/20/cambridge.JPG?q=80&w=2047&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Black Transparent Overlay */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Black tint effect */
+}
+
+/* Hero Content Styling */
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* Button Hover Effect */
+.hero-content .btn:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+}
+.hero-section {
+    animation: zoomIn 10s linear infinite alternate;
+}
+
+@keyframes zoomIn {
+    from {
+        background-size: 100%;
+    }
+    to {
+        background-size: 110%;
+    }
+}
+
+.hero-content {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* About Section Styling */
+.about-section {
+    background: #f8f9fa; /* Light gray background */
+}
+
+.about-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #004080; /* University theme color */
+}
+
+.about-text {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: px;
+}
+
+/* List Styles */
+.about-list {
+    list-style: none;
+    padding: 0;
+}
+
+.about-list li {
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+/* Image Styling */
+.about-section img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.about-section img:hover {
+    transform: scale(1.02);
+}
+
+/* Fade-in Effect */
+.about-section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.about-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Courses Section Styling */
+.courses-section {
+    background: #f8f9fa;
+    padding: 60px 0;
+}
+
+/* Section Title */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #004080;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Course Card Styling */
+.course-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    min-height: 400px;  /* Ensures all cards are of equal height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.course-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 20px rgba(0, 64, 128, 0.2);
+}
+
+/* Image Styling (Fixed Size) */
+.course-img {
+    width: 100%;         /* Makes sure the image fits */
+    max-width: 300px;    /* Sets a reasonable max width */
+    height: 180px;       /* Fixed height to maintain consistency */
+    object-fit: cover;   /* Ensures images fit without distortion */
+    border-radius: 10px;
+    margin: 0 auto;      /* Centers the image */
+}
+
+/* Course Title */
+.course-title {
+    font-size: 1.5rem;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* Course Text */
+.course-text {
+    font-size: 1rem;
+    color: #666;
+    flex-grow: 1; /* Ensures equal spacing */
+}
+
+/* Button Styling */
+.btn-warning {
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 25px;
+    transition: all 0.3s;
+}
+
+.btn-warning:hover {
+    background: #e6b800;
+    transform: scale(1.05);
+}
+
+/* Student Life Section */
+.student-life-section {
+    background: #f8f9fa;
+    padding: 60px 0;
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #004080;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Student Life Cards */
+.student-life-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.student-life-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 20px rgba(0, 64, 128, 0.2);
+}
+
+/* Images inside Cards */
+.student-life-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Titles under images */
+.student-life-title {
+    font-size: 1.3rem;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Video Container */
+.video-container {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Events & News Section */
+.events-news-section {
+    background: #f8f9fa;
+    padding: 60px 0;
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #004080;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* News Grid */
+.news-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* News Card */
+.news-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    position: relative;
+}
+
+.news-card.large {
+    min-height: 350px;
+}
+
+.news-card.medium {
+    min-height: 300px;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px rgba(0, 64, 128, 0.2);
+}
+
+/* News Image */
+.news-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* News Content */
+.news-content {
+    padding: 15px;
+}
+
+.news-content h4 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.news-content p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* Read More Link */
+.read-more {
+    color: #004080;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.read-more:hover {
+    color: #ffcc00;
+}
+
+/* News/Event Pill */
+.news-pill {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 20px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.news-pill.news {
+    background: #ff5733;
+}
+
+.news-pill.event {
+    background: #007bff;
+}
+

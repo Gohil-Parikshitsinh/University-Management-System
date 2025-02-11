@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Navbar</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="Home.css">
+    <script src="Home.js"></script>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg custom-navbar">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="https://ljku.edu.in/web/image/res.company/1/logo" alt="University Logo" height="40" class="me-2">
+                <span class="fw-bold">My University</span>
+            </a>
+
+            <!-- Toggle Button for Mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Admissions</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                </ul>
+                <!-- Login Button -->
+                <a href="#" class="btn login-btn ms-3">Login</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <section class="hero-section">
+        <div class="hero-overlay"></div> <!-- Black Transparent Overlay -->
+        <div class="hero-content text-center text-white">
+            <h1 class="typing-text">Welcome to My University .</h1>
+            <p>Empowering students to shape the future with knowledge and innovation.</p>
+            <a href="#" class="btn btn-warning btn-lg mt-3">Explore More</a>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Image Section -->
+                <div class="col-lg-6 about-left">
+                    <img src="https://images.unsplash.com/photo-1583373834259-46cc92173cb7?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="University Campus" class="img-fluid rounded shadow">
+                </div>
+
+                <!-- Text Section -->
+                <div class="col-lg-6 about-right">
+                    <h2 class="about-title">About Our University</h2>
+                    <p class="about-text">
+                        Established in 1965, My University has been a beacon of academic excellence, fostering innovation and leadership. 
+                        With a diverse faculty and state-of-the-art facilities, we offer top-tier education across various disciplines. 
+                        Our mission is to empower students to shape the future with knowledge and integrity.
+                    </p>
+                    <ul class="about-list">
+                        <li>✔️ 50+ Years of Academic Excellence</li>
+                        <li>✔️ 200+ Courses Available</li>
+                        <li>✔️ 100,000+ Alumni Worldwide</li>
+                        <li>✔️ World-Class Research Facilities</li>
+                    </ul>
+                    <a href="#" class="btn btn-warning mt-3">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Courses & Programs Section -->
+        <section class="courses-section py-5">
+            <div class="container text-center">
+                <h2 class="section-title">Our Popular Programs</h2>
+                <p class="section-subtitle">Explore our top academic programs designed to shape your future.</p>
+    
+                <div class="row mt-4">
+                    <!-- Course Card 1 -->
+                    <div class="col-md-4">
+                        <div class="course-card">
+                            <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Engineering" class="course-img">
+                            <h4 class="course-title">Engineering</h4>
+                            <p class="course-text">Innovative courses in AI, Robotics, and Civil Engineering.</p>
+                        </div>
+                    </div>
+    
+                    <!-- Course Card 2 -->
+                    <div class="col-md-4">
+                        <div class="course-card">
+                            <img src="https://plus.unsplash.com/premium_photo-1661767074521-7c8000177b4f?q=80&w=1954&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Business" class="course-img">
+                            <h4 class="course-title">Business & Management</h4>
+                            <p class="course-text">Master finance, marketing, and entrepreneurship.</p>
+                        </div>
+                    </div>
+    
+                    <!-- Course Card 3 -->
+                    <div class="col-md-4">
+                        <div class="course-card">
+                            <img src="https://plus.unsplash.com/premium_photo-1661745851639-ae31c7196d1f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Medicine" class="course-img">
+                            <h4 class="course-title">Medical & Health Sciences</h4>
+                            <p class="course-text">Advance in healthcare with top medical research.</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- View More Button -->
+                <a href="#" class="btn btn-warning mt-4">View All Programs</a>
+            </div>
+        </section>
+
+
+    <!-- Student Life & Campus Tour Section -->
+    <section class="student-life-section py-5">
+        <div class="container text-center">
+            <h2 class="section-title">Experience Student Life at Our Campus</h2>
+            <p class="section-subtitle">Explore our vibrant student community, modern campus, and exciting extracurricular activities.</p>
+
+            <div class="row mt-4">
+                <!-- Image 1 -->
+                <div class="col-md-4">
+                    <div class="student-life-card">
+                        <img src="https://images.unsplash.com/photo-1576495199011-eb94736d05d6?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Campus View" class="student-life-img">
+                        <h4 class="student-life-title">Modern Campus</h4>
+                    </div>
+                </div>
+
+                <!-- Image 2 -->
+                <div class="col-md-4">
+                    <div class="student-life-card">
+                        <img src="https://images.unsplash.com/photo-1619512673224-91cfb2688284?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Clubs & Activities" class="student-life-img">
+                        <h4 class="student-life-title">Student Clubs & Activities</h4>
+                    </div>
+                </div>
+
+                <!-- Image 3 -->
+                <div class="col-md-4">
+                    <div class="student-life-card">
+                        <img src="https://images.unsplash.com/photo-1517456793572-1d8efd6dc135?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Annual Events" class="student-life-img">
+                        <h4 class="student-life-title">Annual Events & Festivals</h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Virtual Campus Tour -->
+            <div class="campus-tour mt-5">
+                <h3 class="section-subtitle">Take a Virtual Tour</h3>
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/LlCwHnp3kL4?si=VHExbj3dE2WESnEh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- Explore More Button -->
+            <a href="#" class="btn btn-warning mt-4">Explore More</a>
+        </div>
+    </section>
+
+        <!-- Events & News Section -->
+        <section class="events-news-section py-5">
+            <div class="container">
+                <h2 class="section-title text-center">Latest Events & News</h2>
+                <p class="section-subtitle text-center">Stay updated with our latest happenings and announcements.</p>
+    
+                <div class="row news-grid mt-4">
+                    <!-- News Card 1 (Large) -->
+                    <div class="col-lg-6 col-md-6">
+                        <div class="news-card large">
+                            <img src="https://plus.unsplash.com/premium_photo-1661292067129-0b6dbfdf75e2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="News Image" class="news-img">
+                            <span class="news-pill news">News</span>
+                            <div class="news-content">
+                                <h4>New Research Lab Inaugurated</h4>
+                                <p>Our university proudly launches a new AI & Robotics lab to foster innovation.</p>
+                                <a href="#" class="read-more">Read More →</a>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Event Card 1 (Small) -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="news-card">
+                            <img src="https://images.unsplash.com/photo-1520110120835-c96534a4c984?q=80&w=2067&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Event Image" class="news-img">
+                            <span class="news-pill event">Event</span>
+                            <div class="news-content">
+                                <h4>Annual Tech Fest 2025</h4>
+                                <p>Join us for an exciting three-day tech event featuring workshops and hackathons.</p>
+                                <a href="#" class="read-more">Read More →</a>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Event Card 2 (Medium) -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="news-card medium">
+                            <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Event Image" class="news-img">
+                            <span class="news-pill event">Event</span>
+                            <div class="news-content">
+                                <h4>Guest Lecture on AI</h4>
+                                <p>Industry experts discuss the future of Artificial Intelligence in a special session.</p>
+                                <a href="#" class="read-more">Read More →</a>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- News Card 2 (Medium) -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="news-card medium">
+                            <img src="https://images.unsplash.com/photo-1607013407627-6ee814329547?q=80&w=1928&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="News Image" class="news-img">
+                            <span class="news-pill news">News</span>
+                            <div class="news-content">
+                                <h4>Scholarship Program 2025</h4>
+                                <p>Applications are now open for merit-based scholarships for the upcoming academic year.</p>
+                                <a href="#" class="read-more">Read More →</a>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- News Card 3 (Small) -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="news-card">
+                            <img src="https://images.unsplash.com/photo-1564910443496-5fd2d76b47fa?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="News Image" class="news-img">
+                            <span class="news-pill news">News</span>
+                            <div class="news-content">
+                                <h4>New Library Collection</h4>
+                                <p>Over 5000 new books and research papers have been added to our library.</p>
+                                <a href="#" class="read-more">Read More →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- View More Button -->
+                <div class="text-center mt-4">
+                    <a href="#" class="btn btn-warning">View All News & Events</a>
+                </div>
+            </div>
+        </section>
+    
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
