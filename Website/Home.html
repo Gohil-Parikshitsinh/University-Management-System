@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>University Navbar</title>
+    <!-- FontAwesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
@@ -165,7 +167,73 @@
             <a href="#" class="btn btn-warning mt-4">Explore More</a>
         </div>
     </section>
+          <!-- Admissions & Enrollment Section -->
+    <section class="admissions-section py-5">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Admissions & Enrollment</h2>
+                <p class="section-subtitle">Your journey starts with three simple steps.</p>
+            </div>
 
+            <!-- Circular Progress Bar -->
+            <div class="timeline">
+                <div class="timeline-step">
+                    <div class="circle active"><i class="fas fa-file-alt"></i></div>
+                    <span>Apply</span>
+                </div>
+                <div class="timeline-line"></div>
+                <div class="timeline-step">
+                    <div class="circle"><i class="fas fa-upload"></i></div>
+                    <span>Submit</span>
+                </div>
+                <div class="timeline-line"></div>
+                <div class="timeline-step">
+                    <div class="circle"><i class="fas fa-check-circle"></i></div>
+                    <span>Enroll</span>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <!-- Step 1 -->
+                <div class="col-md-4">
+                    <div class="admission-card">
+                        <div class="card-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h4>Apply Online</h4>
+                        <p>Complete the online application form with your details.</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="col-md-4">
+                    <div class="admission-card">
+                        <div class="card-icon">
+                            <i class="fas fa-upload"></i>
+                        </div>
+                        <h4>Submit Documents</h4>
+                        <p>Upload your transcripts, certificates, and other required documents.</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="col-md-4">
+                    <div class="admission-card">
+                        <div class="card-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h4>Get Admission</h4>
+                        <p>Receive your offer letter and confirm your enrollment.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Learn More Button -->
+            <div class="text-center mt-4">
+                <a href="#" class="btn btn-warning">Learn More</a>
+            </div>
+        </div>
+    </section>
         <!-- Events & News Section -->
         <section class="events-news-section py-5">
             <div class="container">
@@ -246,8 +314,143 @@
             </div>
         </section>
     
+         <!-- Contact Us & Location Section -->
+    <section class="contact-section py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Left: Google Map -->
+                <div class="col-lg-6">
+                    <h2 class="section-title">Find Us</h2>
+                    <p class="section-subtitle">Visit our campus or reach out to us.</p>
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345086187!2d144.96305771531596!3d-37.81362797975154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d5df10b0e7f%3A0x5045675218ce840!2sUniversity!5e0!3m2!1sen!2sus!4v1638829381234!5m2!1sen!2sus" 
+                            width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- Right: Contact Form -->
+                <div class="col-lg-6">
+                    <h2 class="section-title">Contact Us</h2>
+                    <p class="section-subtitle">Have questions? Fill out the form below.</p>
+
+                    <form id="contactForm" class="needs-validation" novalidate>
+                        <!-- Full Name -->
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                            <div class="invalid-feedback">Please enter your full name.</div>
+                        </div>
+
+                        <!-- Email Address -->
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                            <div class="invalid-feedback">Please enter a valid email address.</div>
+                        </div>
+
+                        <!-- Subject -->
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" class="form-control" id="subject" placeholder="Enter subject" required>
+                            <div class="invalid-feedback">Please enter a subject.</div>
+                        </div>
+
+                        <!-- Message -->
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Your Message</label>
+                            <textarea class="form-control" id="message" rows="4" placeholder="Type your message" required></textarea>
+                            <div class="invalid-feedback">Message cannot be empty.</div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn btn-warning w-100">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Footer Section -->
+        <footer class="footer-section">
+            <div class="container">
+                <div class="row">
+                    <!-- About Section -->
+                    <div class="col-lg-3 col-md-6">
+                        <h4>About University</h4>
+                        <p>Providing quality education for over 50 years, our university is a place for learning, innovation, and excellence.</p>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+    
+                    <!-- Quick Links -->
+                    <div class="col-lg-3 col-md-6">
+                        <h4>Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Courses</a></li>
+                            <li><a href="#">Admissions</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+    
+                    <!-- Academics -->
+                    <div class="col-lg-3 col-md-6">
+                        <h4>Academics</h4>
+                        <ul class="footer-links">
+                            <li><a href="#">Undergraduate</a></li>
+                            <li><a href="#">Postgraduate</a></li>
+                            <li><a href="#">Research</a></li>
+                            <li><a href="#">Faculty</a></li>
+                            <li><a href="#">Library</a></li>
+                        </ul>
+                    </div>
+    
+                    <!-- Contact Info -->
+                    <div class="col-lg-3 col-md-6">
+                        <h4>Contact Us</h4>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-map-marker-alt"></i> 123 University Road, City, Country</li>
+                            <li><i class="fas fa-phone"></i> +123 456 7890</li>
+                            <li><i class="fas fa-envelope"></i> info@university.com</li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <hr>
+                <!-- Copyright -->
+                <div class="text-center">
+                    <p>&copy; 2025 University Name. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Bootstrap Form Validation
+        (() => {
+            'use strict';
+            const forms = document.querySelectorAll('.needs-validation');
+
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        })();
+    </script>
+
 </body>
 </html>

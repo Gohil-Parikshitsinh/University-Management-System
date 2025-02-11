@@ -321,6 +321,122 @@
     overflow: hidden;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
+/* Admissions Section */
+.admissions-section {
+    background: #f8f9fa;
+    padding: 60px 0;
+}
+
+/* Section Title */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #004080;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* Circular Timeline */
+.timeline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+}
+
+.timeline-step {
+    text-align: center;
+    position: relative;
+}
+
+.circle {
+    width: 60px;
+    height: 60px;
+    background: #ddd;
+    color: #004080;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    transition: 0.3s;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.circle.active {
+    background: #ffcc00;
+    color: white;
+}
+
+.timeline-step span {
+    display: block;
+    font-size: 1rem;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Line Between Steps */
+.timeline-line {
+    width: 50px;
+    height: 4px;
+    background: #ddd;
+    margin: 0 15px;
+}
+
+/* Hover Effect on Timeline Icons */
+.circle:hover {
+    transform: scale(1.1) rotate(10deg);
+}
+
+/* Admission Cards */
+.admission-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    min-height: 220px;
+    border-left: 5px solid #ffcc00;
+}
+
+.admission-card:hover {
+    transform: translateY(-8px);
+    border-left: 5px solid #e6b800;
+    box-shadow: 0px 10px 20px rgba(0, 64, 128, 0.2);
+}
+
+/* Card Icons */
+.card-icon {
+    font-size: 2.5rem;
+    color: #ffcc00;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+
+/* Rotate Effect on Hover */
+.admission-card:hover .card-icon {
+    transform: rotate(10deg);
+}
+
+/* Button Styling */
+.btn-warning {
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 25px;
+    transition: all 0.3s;
+}
+
+.btn-warning:hover {
+    background: #e6b800;
+    transform: scale(1.05);
+}
+
 
 
 /* Events & News Section */
@@ -427,4 +543,139 @@
 .news-pill.event {
     background: #007bff;
 }
+/* Contact Section */
+.contact-section {
+    background: #f8f9fa;
+    padding: 60px 0;
+}
 
+/* Section Titles */
+.section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #004080;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Map Container */
+.map-container {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Styling */
+.form-control {
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.form-control:focus {
+    border-color: #ffcc00;
+    box-shadow: 0 0 5px rgba(255, 204, 0, 0.7);
+}
+
+/* Footer Section */
+.footer-section {
+    background: url('https://images.unsplash.com/photo-1567878874660-beba6dbb1762?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
+    position: relative;
+    color: white;
+    padding: 50px 0;
+}
+
+.footer-section h4 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.footer-section p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Footer Links */
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #ffcc00;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+/* Contact Info */
+.contact-info {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.contact-info i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+/* Social Icons */
+.social-icons {
+    margin-top: 15px;
+}
+
+.social-icons a {
+    color: #ffcc00;
+    font-size: 1.5rem;
+    margin-right: 10px;
+    transition: transform 0.3s;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+    color: white;
+}
+
+/* Copyright */
+.footer-section hr {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 20px 0;
+}
+
+.text-center p {
+    font-size: 1rem;
+}
+
+.footer-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Black Tint */
+    z-index: 1;
+}
+
+/* Ensures Content Stays Above the Overlay */
+.footer-section .container {
+    position: relative;
+    z-index: 2;
+}
