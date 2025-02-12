@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Admissions</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* Hero Section */
+.hero-admissions {
+    background: url('https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 120px 20px;
+    position: relative;
+}
+
+.hero-admissions::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-admissions h1, .hero-admissions p {
+    position: relative;
+    z-index: 2;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+/* Circular Steps Navigation */
+.admission-steps {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 50px 0;
+}
+
+.step-circle {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background: #3498db;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.step-circle:hover {
+    transform: scale(1.1) rotate(10deg);
+    background: #217dbb;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.step-circle.active {
+    background: #e74c3c;
+    transform: scale(1.15);
+    box-shadow: 0 10px 25px rgba(231, 76, 60, 0.4);
+}
+
+.step-circle::after {
+    content: "";
+    width: 6px;
+    height: 6px;
+    background: white;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+}
+
+/* Parallax Sections */
+.parallax {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    overflow: hidden;
+}
+
+.apply-section {
+    background-image: url('https://images.unsplash.com/photo-1503676382389-4809596d5290?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+}
+
+.submit-section {
+    background-image: url('https://plus.unsplash.com/premium_photo-1683887034146-c79058dbdcb1?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+}
+
+.enroll-section {
+    background-image: url('https://plus.unsplash.com/premium_photo-1683121365997-21a2977375b5?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+}
+
+/* Parallax Overlay Effect */
+.parallax::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Content Box Styling */
+.content-box {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 35px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    backdrop-filter: blur(8px);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.content-box h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: #f1c40f;
+}
+
+.content-box p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-admissions {
+        padding: 80px 15px;
+    }
+
+    .hero-admissions h1 {
+        font-size: 28px;
+    }
+
+    .admission-steps {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .step-circle {
+        width: 100px;
+        height: 100px;
+        font-size: 16px;
+    }
+
+    .content-box {
+        padding: 25px;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero-admissions">
+    <h1>Admissions & Enrollment</h1>
+    <p>Begin your journey at our prestigious university.</p>
+</section>
+
+<!-- Circular Navigation -->
+<section class="admission-steps container text-center ">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <div class="step-circle active" data-target="apply">
+                <h3>Apply</h3>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="step-circle" data-target="submit">
+                <h3>Submit</h3>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="step-circle" data-target="enroll">
+                <h3>Enroll</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Apply Section with Parallax -->
+<section class="parallax apply-section">
+    <div class="content-box" id="apply">
+        <h2>How to Apply</h2>
+        <p>Complete the online application form with your personal details and academic background.</p>
+    </div>
+</section>
+
+<!-- Submit Section with Parallax -->
+<section class="parallax submit-section" style="display: none;">
+    <div class="content-box" id="submit">
+        <h2>Submit Documents</h2>
+        <p>Upload your transcripts, recommendation letters, and other required documents.</p>
+    </div>
+</section>
+
+<!-- Enroll Section with Parallax -->
+<section class="parallax enroll-section" style="display: none;">
+    <div class="content-box" id="enroll">
+        <h2>Enroll in Courses</h2>
+        <p>Once accepted, choose your courses and complete enrollment formalities.</p>
+    </div>
+</section>
+
+<script>
+    $(document).ready(function () {
+        $(".step-circle").click(function () {
+            let target = $(this).data("target");
+
+            // Hide all parallax sections
+            $(".parallax").fadeOut(200);
+
+            // Show the clicked section after delay
+            setTimeout(() => {
+                $("." + target + "-section").fadeIn(400);
+            }, 200);
+
+            // Update active circle
+            $(".step-circle").removeClass("active");
+            $(this).addClass("active");
+        });
+    });
+</script>
+
+</body>
+</html>

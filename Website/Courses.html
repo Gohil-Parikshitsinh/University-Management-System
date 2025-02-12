@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses | University</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="Courses.css">
+</head>
+<body>
+
+    
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Explore Our Courses</h1>
+            <p>Find the perfect program to shape your future.</p>
+        </div>
+    </section>
+
+    <!-- Filters Section -->
+<section class="filters-section container mt-5">
+    <div class="row g-4">
+        <!-- Program Level Filter -->
+        <div class="col-md-4">
+            <h5 class="mb-2">Program Level</h5>
+            <select class="form-select filter" id="levelFilter">
+                <option value="all">All</option>
+                <option value="undergrad">Undergraduate</option>
+                <option value="postgrad">Postgraduate</option>
+                <option value="phd">PhD</option>
+                <option value="diploma">Diploma</option>
+                <option value="certificate">Certificate</option>
+            </select>
+        </div>
+
+        <!-- Degree Type Filter -->
+        <div class="col-md-4">
+            <h5 class="mb-2">Degree Type</h5>
+            <select class="form-select filter" id="degreeFilter">
+                <option value="all">All</option>
+                <option value="btech">B.Tech</option>
+                <option value="mtech">M.Tech</option>
+                <option value="bsc">B.Sc</option>
+                <option value="msc">M.Sc</option>
+                <option value="ba">B.A</option>
+                <option value="ma">M.A</option>
+                <option value="bba">BBA</option>
+                <option value="mba">MBA</option>
+                <option value="bcom">B.Com</option>
+                <option value="mcom">M.Com</option>
+                <option value="llb">LLB</option>
+                <option value="llm">LLM</option>
+                <option value="phd">PhD</option>
+            </select>
+        </div>
+
+        <!-- Field of Study Filter -->
+        <div class="col-md-4">
+            <h5 class="mb-2">Field of Study</h5>
+            <select class="form-select filter" id="fieldFilter">
+                <option value="all">All</option>
+                <option value="cs">Computer Science</option>
+                <option value="business">Business & Management</option>
+                <option value="engineering">Engineering</option>
+                <option value="medicine">Medicine & Health</option>
+                <option value="law">Law & Legal Studies</option>
+                <option value="arts">Arts & Humanities</option>
+                <option value="science">Pure Sciences</option>
+                <option value="education">Education & Teaching</option>
+                <option value="design">Design & Architecture</option>
+            </select>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Courses Section -->
+    <section class="courses-section container mt-5">
+        <div class="row" id="coursesContainer">
+            <!-- Course Card 1 -->
+            <div class="col-md-4 course-card" data-level="undergrad" data-degree="bsc" data-field="cs">
+                <div class="card">
+                    <img src="https://plus.unsplash.com/premium_photo-1678566111481-8e275550b700?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="CS Course">
+                    <div class="card-body">
+                        <h5 class="card-title">B.Sc Computer Science</h5>
+                        <p class="card-text">Learn programming, algorithms, AI, and more.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course Card 2 -->
+            <div class="col-md-4 course-card" data-level="postgrad" data-degree="msc" data-field="engineering">
+                <div class="card">
+                    <img src="https://plus.unsplash.com/premium_photo-1672256330854-98c717493128?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Engineering">
+                    <div class="card-body">
+                        <h5 class="card-title">M.Sc Engineering</h5>
+                        <p class="card-text">Advanced engineering concepts and research.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course Card 3 -->
+            <div class="col-md-4 course-card" data-level="phd" data-degree="phd" data-field="medicine">
+                <div class="card">
+                    <img src="https://plus.unsplash.com/premium_photo-1673953510197-0950d951c6d9?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Medicine">
+                    <div class="card-body">
+                        <h5 class="card-title">PhD in Medicine</h5>
+                        <p class="card-text">Research and medical innovations.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Engineering Courses -->
+<div class="col-md-4 course-card" data-level="undergrad" data-degree="btech" data-field="chemical">
+    <div class="card">
+        <img src="https://plus.unsplash.com/premium_photo-1664303424853-9b9aeded5891?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Chemical Engineering">
+        <div class="card-body">
+            <h5 class="card-title">B.Tech in Chemical Engineering</h5>
+            <p class="card-text">Study chemical reactions, processes, and industrial applications.</p>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 course-card" data-level="postgrad" data-degree="mtech" data-field="civil">
+    <div class="card">
+        <img src="https://plus.unsplash.com/premium_photo-1664474927853-900d5ee1fd80?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Civil Engineering">
+        <div class="card-body">
+            <h5 class="card-title">M.Tech in Civil Engineering</h5>
+            <p class="card-text">Advanced structural design, construction, and geotechnical engineering.</p>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 course-card" data-level="phd" data-degree="phd" data-field="mechanical">
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Mechanical Engineering">
+        <div class="card-body">
+            <h5 class="card-title">PhD in Mechanical Engineering</h5>
+            <p class="card-text">Research in thermodynamics, robotics, and materials science.</p>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 course-card" data-level="undergrad" data-degree="btech" data-field="electrical">
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1546637063-5bb8a30c72cd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Electrical Engineering">
+        <div class="card-body">
+            <h5 class="card-title">B.Tech in Electrical Engineering</h5>
+            <p class="card-text">Power systems, electronics, and electrical circuits.</p>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 course-card" data-level="postgrad" data-degree="mtech" data-field="electronics">
+    <div class="card">
+        <img src="https://plus.unsplash.com/premium_photo-1664301884434-228dd7cff3a6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Electronics Engineering">
+        <div class="card-body">
+            <h5 class="card-title">M.Tech in Electronics & Communication</h5>
+            <p class="card-text">VLSI, communication systems, and signal processing.</p>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 course-card" data-level="phd" data-degree="phd" data-field="material">
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1581093586267-784d0a92223d?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Material Science">
+        <div class="card-body">
+            <h5 class="card-title">PhD in Material Science</h5>
+            <p class="card-text">Advanced research in metallurgy, nanomaterials, and polymers.</p>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 course-card" data-level="undergrad" data-degree="btech" data-field="automobile">
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1581092333203-42374bcf7d89?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Automobile Engineering">
+        <div class="card-body">
+            <h5 class="card-title">B.Tech in Automobile Engineering</h5>
+            <p class="card-text">Automotive design, manufacturing, and vehicle dynamics.</p>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 course-card" data-level="postgrad" data-degree="mtech" data-field="agriculture">
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1580982327559-c1202864eb05?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Agriculture Engineering">
+        <div class="card-body">
+            <h5 class="card-title">M.Tech in Agriculture Engineering</h5>
+            <p class="card-text">Precision farming, irrigation systems, and soil conservation.</p>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 course-card" data-level="phd" data-degree="phd" data-field="textile">
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1580982172477-9373ff52ae43?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Textile Engineering">
+        <div class="card-body">
+            <h5 class="card-title">PhD in Textile Engineering</h5>
+            <p class="card-text">Research in fabric production, dyeing techniques, and materials.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Management Courses -->
+<div class="col-md-4 course-card" data-level="postgrad" data-degree="mba" data-field="marketing">
+    <div class="card">
+        <img src="https://plus.unsplash.com/premium_photo-1661573183799-0815e290ab70?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="MBA Marketing">
+        <div class="card-body">
+            <h5 class="card-title">MBA in Marketing</h5>
+            <p class="card-text">Brand management, digital marketing, and consumer analytics.</p>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 course-card" data-level="postgrad" data-degree="mba" data-field="finance">
+    <div class="card">
+        <img src="https://plus.unsplash.com/premium_photo-1679923813998-6603ee2466c5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="MBA Finance">
+        <div class="card-body">
+            <h5 class="card-title">MBA in Finance</h5>
+            <p class="card-text">Financial planning, risk management, and investment banking.</p>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 course-card" data-level="postgrad" data-degree="mba" data-field="hr">
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1551135049-8a33b5883817?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="MBA HR">
+        <div class="card-body">
+            <h5 class="card-title">MBA in Human Resources</h5>
+            <p class="card-text">Talent management, recruitment, and employee engagement.</p>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 course-card" data-level="postgrad" data-degree="mba" data-field="it">
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1573496774379-b930dba17d8b?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="MBA IT">
+        <div class="card-body">
+            <h5 class="card-title">MBA in Information Technology</h5>
+            <p class="card-text">IT strategy, data analytics, and business intelligence.</p>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 course-card" data-level="postgrad" data-degree="mba" data-field="supply-chain">
+    <div class="card">
+        <img src="https://plus.unsplash.com/premium_photo-1664301713568-896df8967017?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="MBA Supply Chain">
+        <div class="card-body">
+            <h5 class="card-title">MBA in Supply Chain Management</h5>
+            <p class="card-text">Logistics, procurement, and inventory management.</p>
+        </div>
+    </div>
+</div>
+
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="Courses.js"></script>
+
+</body>
+</html>
