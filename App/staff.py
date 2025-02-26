@@ -1,105 +1,100 @@
-import student  # Import student data for management
-import courses  # Import courses module
-import attendance  # Import attendance module
-import exams  # Import exams module
-import finance  # Import finance module
-import analytics  # Import analytics for reports
+import data
+import exceptions
+
+def display_staff_menu():
+    print("\nStaff Management")
+    print("1. Add Staff")
+    print("2. View All Staff")
+    print("3. Update Staff")
+    print("4. Remove Staff")
+    print("5. Back to Main Menu")
 
 
-def add_student():
-    """Allows staff to add a new student"""
-    student_id = input("\nEnter new student ID: ")
-    if student_id in student.student_grades:
-        print("❌ Student ID already exists.")
+def generate_staff_id():
+    if not data.staff:
+        return "S001"
+
+    # Extract the numeric part, find the highest, and increment by 1
+    existing_ids = [int(staff_id[1:]) for staff_id in data.staff.keys()]
+    new_id = max(existing_ids) + 1
+    return f"S{str(new_id).zfill(3)}"
+
+
+def add_staff():
+    staff_id = generate_staff_id()
+    print(f"Generated Staff ID: {staff_id}")
+
+    name = input("Enter Staff Name: ")
+    role = input("Enter Staff Role: ")
+
+    try:
+        salary = float(input("Enter Staff Salary: "))
+        exceptions.validate_salary(salary)
+
+        exceptions.check_staff_id_exists(staff_id, data.staff)
+
+        data.staff[staff_id] = {"name": name, "role": role, "salary": salary}
+        print(f"Staff {name} added successfully with ID {staff_id}.")
+
+    except exceptions.StaffIDExistsError as e:
+        print(e)
+    except exceptions.InvalidSalaryError as e:
+        print(e)
+    except ValueError:
+        print("Invalid input. Please enter a numeric value for salary.")
+
+
+def view_staff():
+    if not data.staff:
+        print("No staff records found.")
+        return
+    print("\nStaff List:")
+    for staff_id, details in data.staff.items():
+        print(f"{staff_id}: {details['name']} - {details['role']} - ${details['salary']}")
+
+
+def update_staff():
+    staff_id = input("Enter Staff ID to update: ")
+    if staff_id not in data.staff:
+        print("Staff ID not found!")
         return
 
-    student_name = input("Enter student name: ")
-    subjects = input("Enter subjects (comma separated): ").split(",")
+    print(f"Updating record for {data.staff[staff_id]['name']}")
+    name = input("Enter new name (or press Enter to keep current): ") or data.staff[staff_id]['name']
+    role = input("Enter new role (or press Enter to keep current): ") or data.staff[staff_id]['role']
+    try:
+        salary = input("Enter new salary (or press Enter to keep current): ")
+        salary = float(salary) if salary else data.staff[staff_id]['salary']
+        data.staff[staff_id] = {"name": name, "role": role, "salary": salary}
+        print("Staff record updated successfully.")
+    except ValueError:
+        print("Invalid salary input.")
 
-    # Initialize student records
-    student.student_grades[student_id] = {sub.strip(): 0 for sub in subjects}
-    student.student_attendance[student_id] = []
-    student.student_fees[student_id] = {"Total": 50000, "Paid": 0, "Due": 50000}
 
-    print(f"✅ Student '{student_name}' added successfully!")
-
-
-def remove_student():
-    """Allows staff to remove a student"""
-    student_id = input("\nEnter student ID to remove: ")
-    if student_id in student.student_grades:
-        del student.student_grades[student_id]
-        del student.student_attendance[student_id]
-        del student.student_fees[student_id]
-        print(f"✅ Student {student_id} removed successfully.")
+def remove_staff():
+    staff_id = input("Enter Staff ID to remove: ")
+    if staff_id in data.staff:
+        del data.staff[staff_id]
+        print("Staff removed successfully.")
     else:
-        print("❌ Student not found.")
-
-
-def update_fee_payment():
-    """Allows staff to update fee payments"""
-    student_id = input("\nEnter student ID: ")
-    if student_id in student.student_fees:
-        amount = int(input("Enter amount paid: "))
-        student.student_fees[student_id]["Paid"] += amount
-        student.student_fees[student_id]["Due"] -= amount
-        print(f"✅ Fee payment updated for {student_id}. Remaining Due: ₹{student.student_fees[student_id]['Due']}")
-    else:
-        print("❌ Student not found.")
-
-
-def generate_reports():
-    """Generates student reports (grades & attendance summary)"""
-    print("\n📊 Generating Reports...")
-
-    for student_id in student.student_grades:
-        grades = student.student_grades[student_id]
-        avg_grade = sum(grades.values()) / len(grades) if grades else 0
-
-        attendance = student.student_attendance[student_id]
-        attendance_percentage = (np.sum(attendance) / len(attendance)) * 100 if len(attendance) > 0 else 0
-
-        print(f"\n📝 Student: {student_id}")
-        print(f"📚 Average Grade: {avg_grade:.2f}")
-        print(f"📅 Attendance: {attendance_percentage:.2f}%")
-        print("────────────────────────────")
+        print("Staff ID not found.")
 
 
 def staff_menu():
-    """Staff menu options"""
     while True:
-        print("\n--- Staff Dashboard ---")
-        print("1. Add Student")
-        print("2. Remove Student")
-        print("3. Update Fee Payment")
-        print("4. Manage Course Enrollments")
-        print("5. View Attendance Reports")
-        print("6. Generate Student Performance Reports")
-        print("7. View University Analytics 📊")
-        print("8. Logout")
+        display_staff_menu()
+        choice = input("Enter your choice (1-5): ")
 
-        choice = input("Enter your choice: ")
-
-        if choice == "1":
-            add_student()
-        elif choice == "2":
-            remove_student()
-        elif choice == "3":
-            update_fee_payment()
-        elif choice == "4":
-            courses.list_courses()
-        elif choice == "5":
-            print("\n📅 Attendance Reports:")
-            for student_id in student.student_attendance:
-                attendance.view_attendance(student_id)
-        elif choice == "6":
-            print("\n📜 Student Performance Reports:")
-            for student_id in exams.exam_results:
-                exams.view_exam_results(student_id)
-        elif choice == "7":
-            analytics.analytics_menu("staff")
-        elif choice == "8":
-            print("🔒 Logging out...")
+        if choice == '1':
+            add_staff()
+        elif choice == '2':
+            view_staff()
+        elif choice == '3':
+            update_staff()
+        elif choice == '4':
+            remove_staff()
+        elif choice == '5':
+            print("Returning to main menu...")
             break
         else:
-            print("❌ Invalid choice. Please try again.")
+            print("Invalid choice. Please try again.")

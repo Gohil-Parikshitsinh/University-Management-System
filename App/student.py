@@ -1,91 +1,100 @@
-import numpy as np
-import analytics  # Import analytics for data visualization
-import courses  # Import courses for enrollment
-import attendance  # Import attendance system
-import exams  # Import exams module
-import finance  # Import finance module
-
-# Sample student data
-student_grades = {
-    "student1": {"CSE101": 85, "CSE102": 90},
-    "student2": {"CSE101": 75, "CSE102": 80},
-}
-
-student_attendance = {
-    "student1": np.array([1, 1, 0, 1, 1, 1, 0, 1, 1, 1]),  # 1 = Present, 0 = Absent
-    "student2": np.array([1, 0, 1, 1, 1, 0, 1, 1, 1, 1]),
-}
-
-student_fees = {
-    "student1": {"Total": 50000, "Paid": 30000, "Due": 20000},
-    "student2": {"Total": 50000, "Paid": 50000, "Due": 0},
-}
+import data
+import exceptions
 
 
-def view_grades(username):
-    """Displays grades for the logged-in student"""
-    if username in student_grades:
-        print("\n📚 Your Grades:")
-        for subject, grade in student_grades[username].items():
-            print(f"{subject}: {grade}")
+def generate_student_id():
+    if not data.students:
+        return "ST001"
+
+    existing_ids = [int(student_id[2:]) for student_id in data.students.keys()]
+    new_id = max(existing_ids) + 1
+    return f"ST{str(new_id).zfill(3)}"
+
+
+def display_student_menu():
+    print("\nStudent Management")
+    print("1. Add Student")
+    print("2. View All Students")
+    print("3. Update Student")
+    print("4. Remove Student")
+    print("5. Back to Main Menu")
+
+
+def add_student():
+    student_id = generate_student_id()
+    print(f"Generated Student ID: {student_id}")
+
+    name = input("Enter Student Name: ")
+    age = input("Enter Student Age: ")
+    course = input("Enter Enrolled Course: ")
+
+    try:
+        exceptions.validate_name(name)
+        exceptions.validate_age(age)
+        exceptions.validate_course(course)
+
+        data.students[student_id] = {"name": name, "age": int(age), "course": course}
+        print(f"Student {name} added successfully with ID {student_id}.")
+
+    except (exceptions.InvalidNameError, exceptions.InvalidAgeError, exceptions.InvalidCourseError) as e:
+        print(e)
+
+
+def view_students():
+    if not data.students:
+        print("No student records found.")
+        return
+    print("\nStudent List:")
+    for student_id, details in data.students.items():
+        print(f"{student_id}: {details['name']} - Age: {details['age']} - Course: {details['course']}")
+
+
+def update_student():
+    student_id = input("Enter Student ID to update: ")
+    if student_id not in data.students:
+        print("Student ID not found!")
+        return
+
+    name = input("Enter new name (or press Enter to keep current): ") or data.students[student_id]['name']
+    age = input("Enter new age (or press Enter to keep current): ") or data.students[student_id]['age']
+    course = input("Enter new course (or press Enter to keep current): ") or data.students[student_id]['course']
+
+    try:
+        exceptions.validate_name(name)
+        exceptions.validate_age(age)
+        exceptions.validate_course(course)
+
+        data.students[student_id] = {"name": name, "age": int(age), "course": course}
+        print("Student record updated successfully.")
+
+    except (exceptions.InvalidNameError, exceptions.InvalidAgeError, exceptions.InvalidCourseError) as e:
+        print(e)
+
+
+def remove_student():
+    student_id = input("Enter Student ID to remove: ")
+    if student_id in data.students:
+        del data.students[student_id]
+        print("Student removed successfully.")
     else:
-        print("\n❌ No grades found for this student.")
+        print("Student ID not found.")
 
-def view_attendance(username):
-    """Displays attendance percentage for the student"""
-    if username in student_attendance:
-        attendance_record = student_attendance[username]
-        total_classes = len(attendance_record)
-        attended_classes = np.sum(attendance_record)
-        attendance_percentage = (attended_classes / total_classes) * 100
-        print(f"\n📅 Your Attendance: {attendance_percentage:.2f}% ({attended_classes}/{total_classes} classes attended)")
-    else:
-        print("\n❌ No attendance record found.")
 
-def view_fee_status(username):
-    """Displays the fee payment status for the student"""
-    if username in student_fees:
-        fee_info = student_fees[username]
-        print("\n💰 Fee Status:")
-        print(f"Total Fee: ₹{fee_info['Total']}")
-        print(f"Paid: ₹{fee_info['Paid']}")
-        print(f"Due: ₹{fee_info['Due']}")
-    else:
-        print("\n❌ No fee details found.")
-
-def student_menu(username):
-    """Student menu options"""
+def student_menu():
     while True:
-        print("\n--- Student Dashboard ---")
-        print("1. View Enrolled Courses")
-        print("2. Enroll in a Course")
-        print("3. View Attendance")
-        print("4. View Exam Results")
-        print("5. View & Pay Fees")
-        print("6. View Performance Reports 📊")
-        print("7. Logout")
+        display_student_menu()
+        choice = input("Enter your choice (1-5): ")
 
-        choice = input("Enter your choice: ")
-
-        if choice == "1":
-            print("\n📖 Your Enrolled Courses:")
-            for code, details in courses.courses.items():
-                if username in details["students"]:
-                    print(f"{code}: {details['name']} (Instructor: {details['faculty']})")
-        elif choice == "2":
-            courses.list_courses()
-            course_code = input("Enter course code to enroll: ").upper()
-            courses.enroll_student(username, course_code)
-        elif choice == "3":
-            attendance.view_attendance(username)
-        elif choice == "4":
-            exams.view_exam_results(username)
-        elif choice == "5":
-            finance.pay_fees(username)
-        elif choice == "6":
-            analytics.analytics_menu(username)
-        elif choice == "7":
-            print("🔒 Logging out...")
+        if choice == '1':
+            add_student()
+        elif choice == '2':
+            view_students()
+        elif choice == '3':
+            update_student()
+        elif choice == '4':
+            remove_student()
+        elif choice == '5':
+            print("Returning to main menu...")
             break
         else:
-            print("❌ Invalid choice. Please try again.")
+            print("Invalid choice. Please try again.")
